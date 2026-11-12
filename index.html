@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#183c35">
+  <meta name="description" content="TH Nuts supplies macadamia, cashew and other nut products to international food buyers, wholesalers and distributors.">
+  <title>TH Nuts | Nuts, sourced with purpose</title>
+  <style>
+    :root {
+      --forest: #183c35;
+      --forest-2: #28594d;
+      --leaf: #91a84f;
+      --citrus: #e3aa4b;
+      --ink: #202c28;
+      --muted: #65716b;
+      --paper: #f7f7f2;
+      --white: #fff;
+      --line: #dce2db;
+      --max: 1240px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--ink); background: var(--white); font-family: Arial, Helvetica, sans-serif; line-height: 1.55; }
+    a { color: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    .wrap { width: min(var(--max), calc(100% - 64px)); margin-inline: auto; }
+    .topline { background: var(--forest); color: #eaf0e8; font-size: 12px; }
+    .topline-inner { display: flex; justify-content: space-between; gap: 20px; padding: 9px 0; }
+    .topline a { text-decoration: none; }
+    .site-header { position: sticky; z-index: 10; top: 0; background: rgba(255,255,255,.97); border-bottom: 1px solid var(--line); }
+    .nav { display: flex; align-items: center; min-height: 78px; gap: 30px; }
+    .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; margin-right: auto; }
+    .brand img { width: 52px; height: 52px; object-fit: contain; }
+    .brand-name { color: var(--forest); font-weight: 800; font-size: 22px; letter-spacing: .4px; line-height: 1; }
+    .brand-sub { display: block; color: var(--muted); font-size: 9px; font-weight: 600; letter-spacing: 1.2px; margin-top: 5px; }
+    .nav-links { display: flex; align-items: center; gap: 25px; }
+    .nav-links a { text-decoration: none; font-size: 13px; font-weight: 700; color: #35413b; }
+    .nav-links a:hover { color: var(--forest-2); }
+    .nav-product { position: relative; }
+    .nav-product > a { display: inline-flex; align-items: center; gap: 5px; }
+    .nav-product > a::after { content: '⌄'; font-size: 14px; }
+    .product-menu { display: none; position: absolute; top: 100%; left: -15px; min-width: 205px; padding: 8px 0; background: white; border: 1px solid var(--line); box-shadow: 0 12px 28px rgba(20,49,39,.12); }
+    .nav-product:hover .product-menu, .nav-product:focus-within .product-menu { display: block; }
+    .product-menu a { display: block; padding: 10px 15px; white-space: nowrap; }
+    .product-menu a:hover { background: var(--paper); }
+    .nav-actions { display: flex; gap: 8px; align-items: center; }
+    .lang-switch, .menu-toggle { border: 1px solid var(--line); background: white; height: 38px; min-width: 44px; padding: 0 10px; color: var(--forest); font-size: 12px; font-weight: 700; cursor: pointer; }
+    .menu-toggle { display: none; width: 42px; font-size: 19px; }
+    .button { display: inline-flex; justify-content: center; align-items: center; gap: 8px; min-height: 46px; padding: 0 20px; border: 1px solid var(--forest); background: var(--forest); color: white; font-size: 13px; font-weight: 700; text-decoration: none; transition: background .18s, color .18s; }
+    .button:hover { background: var(--forest-2); }
+    .button-outline { color: var(--forest); background: transparent; }
+    .button-outline:hover { color: white; }
+    .hero { position: relative; min-height: 610px; display: flex; align-items: center; overflow: hidden; color: white; background: var(--forest); }
+    .hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .hero::after { position: absolute; inset: 0; content: ''; background: linear-gradient(90deg, rgba(18,44,39,.83) 0%, rgba(18,44,39,.55) 47%, rgba(18,44,39,.1) 100%); }
+    .hero-content { padding: 75px 0 86px; max-width: 700px; }
+    .hero .wrap { position: relative; z-index: 1; }
+    .eyebrow { display: flex; align-items: center; gap: 11px; margin: 0 0 18px; color: var(--citrus); font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; }
+    .eyebrow::before { width: 26px; height: 2px; background: currentColor; content: ''; }
+    h1 { max-width: 680px; margin: 0; font-size: clamp(42px, 5vw, 68px); line-height: 1.04; letter-spacing: 0; }
+    .hero-copy { max-width: 570px; margin: 23px 0 28px; color: #ecf0e9; font-size: 17px; }
+    .hero-actions { display: flex; gap: 11px; flex-wrap: wrap; }
+    .hero .button { background: var(--citrus); border-color: var(--citrus); color: #222c25; }
+    .hero .button:hover { background: #efbd69; }
+    .hero .button-outline { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.75); color: white; }
+    .hero .button-outline:hover { background: white; color: var(--forest); }
+    .hero-note { margin-top: 30px; color: #e8eee7; font-size: 12px; }
+    .hero-note strong { color: white; }
+    .trustline { border-bottom: 1px solid var(--line); background: var(--paper); }
+    .trust-grid { display: grid; grid-template-columns: repeat(4,1fr); }
+    .trust-item { min-height: 96px; display: flex; align-items: center; gap: 14px; padding: 18px 24px; border-right: 1px solid var(--line); }
+    .trust-item:first-child { padding-left: 0; }
+    .trust-item:last-child { border-right: 0; }
+    .trust-index { color: var(--leaf); font-weight: 800; font-size: 24px; }
+    .trust-item strong { display: block; color: var(--forest); font-size: 13px; }
+    .trust-item span:last-child { color: var(--muted); font-size: 11px; }
+    section { scroll-margin-top: 78px; }
+    .section { padding: 88px 0; }
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 30px; margin-bottom: 33px; }
+    .section-head h2 { max-width: 620px; margin: 0; color: var(--forest); font-size: 38px; line-height: 1.12; letter-spacing: 0; }
+    .section-head p { max-width: 450px; margin: 0; color: var(--muted); font-size: 14px; }
+    .section-tag { margin: 0 0 9px; color: #819740; font-size: 11px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; }
+    .product-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
+    .product-card { border: 1px solid var(--line); background: white; min-width: 0; }
+    .product-card img { display: block; width: 100%; height: 235px; object-fit: cover; background: var(--paper); }
+    .product-body { padding: 20px 20px 22px; }
+    .product-kicker { color: #718344; font-size: 10px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; }
+    .product-body h3 { margin: 6px 0 7px; color: var(--forest); font-size: 20px; }
+    .product-body p { min-height: 45px; margin: 0; color: var(--muted); font-size: 13px; }
+    .grade { margin-top: 16px; padding-top: 13px; border-top: 1px solid var(--line); color: #47544d; font-size: 11px; }
+    .grade strong { color: var(--ink); }
+    .product-link { display: inline-block; margin-top: 14px; color: var(--forest); font-size: 12px; font-weight: 800; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .product-foot { display: flex; justify-content: space-between; align-items: center; margin-top: 22px; padding: 17px 0 0; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; }
+    .product-foot a { color: var(--forest); font-weight: 800; }
+    .supply { background: var(--paper); }
+    .route-layout { display: grid; grid-template-columns: .85fr 1.15fr; gap: 70px; align-items: center; }
+    .route-copy h2 { margin: 0 0 18px; color: var(--forest); font-size: 39px; line-height: 1.12; }
+    .route-copy > p:not(.section-tag) { color: var(--muted); font-size: 14px; }
+    .route-list { margin-top: 25px; border-top: 1px solid var(--line); }
+    .route-row { display: grid; grid-template-columns: 48px 1fr; gap: 14px; padding: 15px 0; border-bottom: 1px solid var(--line); }
+    .route-no { color: var(--leaf); font-size: 12px; font-weight: 800; }
+    .route-row strong { display: block; color: var(--forest); font-size: 14px; }
+    .route-row span { color: var(--muted); font-size: 12px; }
+    .route-map { position: relative; min-height: 425px; overflow: hidden; background: var(--forest); color: white; }
+    .route-map::before { position: absolute; inset: 0; content: ''; opacity: .42; background: url('assets/macadamia-raw.jpg') center/cover; }
+    .route-map::after { position: absolute; inset: 0; content: ''; background: linear-gradient(135deg, rgba(18,52,45,.92), rgba(24,60,53,.5)); }
+    .map-content { position: relative; z-index: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 425px; padding: 29px; }
+    .map-label { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: #d9e4cb; }
+    .map-route { display: grid; gap: 0; max-width: 450px; margin: 18px auto; width: 100%; }
+    .map-stop { display: grid; grid-template-columns: 22px 1fr; gap: 13px; align-items: center; min-height: 80px; }
+    .map-dot { position: relative; width: 12px; height: 12px; background: var(--citrus); border: 3px solid rgba(255,255,255,.5); border-radius: 50%; }
+    .map-stop:not(:last-child) .map-dot::after { position: absolute; left: 2px; top: 8px; height: 63px; border-left: 1px dashed rgba(255,255,255,.65); content: ''; }
+    .map-stop strong { display: block; font-size: 16px; }
+    .map-stop span { display: block; color: #d6e0d8; font-size: 11px; }
+    .route-caveat { color: #d9e4dd; font-size: 10px; }
+    .trade { display: grid; grid-template-columns: 1fr 1fr; gap: 65px; align-items: start; }
+    .trade h2 { margin: 0 0 15px; color: var(--forest); font-size: 38px; line-height: 1.12; }
+    .trade-intro { max-width: 460px; color: var(--muted); font-size: 14px; }
+    .terms { border-top: 2px solid var(--forest); }
+    .term-row { display: grid; grid-template-columns: 145px 1fr; gap: 20px; padding: 15px 0; border-bottom: 1px solid var(--line); }
+    .term-row strong { color: var(--forest); font-size: 12px; }
+    .term-row span { color: #4e5b54; font-size: 12px; }
+    .about-band { background: #edf1eb; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; }
+    .about-image { min-height: 355px; background: url('assets/office-1.jpeg') center/cover; }
+    .about-copy h2 { margin: 0 0 17px; color: var(--forest); font-size: 37px; line-height: 1.12; }
+    .about-copy p { color: var(--muted); font-size: 14px; }
+    .about-name { margin-top: 25px; padding-top: 16px; border-top: 1px solid #cdd7cd; color: var(--forest); font-size: 12px; font-weight: 800; }
+    .contact { background: var(--forest); color: white; }
+    .contact .section-tag { color: var(--citrus); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.1fr .55fr; gap: 48px; align-items: start; }
+    .contact h2 { margin: 0 0 14px; font-size: 40px; line-height: 1.08; }
+    .contact-intro { max-width: 380px; color: #d0ddd4; font-size: 14px; }
+    .contact-list { border-top: 1px solid rgba(255,255,255,.25); }
+    .contact-row { display: grid; grid-template-columns: 104px 1fr; gap: 12px; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,.18); font-size: 12px; }
+    .contact-row span { color: #c4d5ca; }
+    .contact-row a { color: white; overflow-wrap: anywhere; }
+    .qr { width: 126px; padding: 7px; background: white; }
+    .qr img { display: block; width: 100%; height: auto; }
+    .qr-caption { margin-top: 8px; color: #d0ddd4; font-size: 10px; text-align: center; }
+    footer { background: #102e29; color: #ccdad0; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 20px 0; font-size: 10px; }
+    .footer-links { display: flex; gap: 16px; }
+    .footer-links a { text-decoration: none; }
+    .mobile-contact { display: none; }
+    [data-en], [data-zh] { transition: opacity .15s; }
+    body.zh [data-en] { display: none !important; }
+    body:not(.zh) [data-zh] { display: none !important; }
+    @media (max-width: 950px) {
+      .wrap { width: min(var(--max), calc(100% - 42px)); }
+      .nav { gap: 16px; }
+      .nav-links { gap: 14px; }
+      .nav-links a { font-size: 12px; }
+      .contact-grid { grid-template-columns: 1fr 1.2fr; }
+      .qr-block { grid-column: 2; }
+      .route-layout, .about-grid { gap: 36px; }
+    }
+    @media (max-width: 700px) {
+      .wrap { width: calc(100% - 36px); }
+      .topline-inner { justify-content: center; text-align: center; font-size: 10px; }
+      .topline-inner span:last-child { display: none; }
+      .nav { min-height: 67px; gap: 10px; }
+      .brand img { width: 44px; height: 44px; }
+      .brand-name { font-size: 19px; }
+      .brand-sub { font-size: 8px; }
+      .nav-links { display: none; position: absolute; top: 67px; left: 0; right: 0; padding: 10px 18px 18px; background: white; border-bottom: 1px solid var(--line); }
+      .nav-links.open { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+      .nav-product { display: contents; }
+      .nav-product > a { display: none; }
+      .product-menu { position: static; display: contents; min-width: 0; padding: 0; border: 0; box-shadow: none; }
+      .product-menu a { display: block; padding: 12px 4px; border-bottom: 1px solid #edf0ec; white-space: normal; }
+      .nav-links a { padding: 12px 4px; border-bottom: 1px solid #edf0ec; font-size: 13px; }
+      .nav-actions .button { display: none; }
+      .menu-toggle { display: block; }
+      .hero { min-height: 555px; align-items: end; }
+      .hero::after { background: linear-gradient(0deg, rgba(15,43,37,.95) 0%, rgba(15,43,37,.72) 51%, rgba(15,43,37,.12) 100%); }
+      .hero-content { padding: 100px 0 40px; }
+      h1 { font-size: 45px; }
+      .hero-copy { font-size: 15px; }
+      .hero-note { margin-top: 20px; }
+      .trust-grid { grid-template-columns: 1fr 1fr; }
+      .trust-item { min-height: 76px; padding: 12px 8px; border-bottom: 1px solid var(--line); }
+      .trust-item:first-child { padding-left: 8px; }
+      .trust-item:nth-child(2) { border-right: 0; }
+      .trust-item:nth-child(3) { border-bottom: 0; }
+      .trust-item:nth-child(4) { border-right: 0; border-bottom: 0; }
+      .trust-index { font-size: 18px; }
+      .trust-item strong { font-size: 11px; }
+      .trust-item span:last-child { font-size: 9px; }
+      .section { padding: 62px 0; }
+      .section-head { display: block; margin-bottom: 24px; }
+      .section-head h2, .route-copy h2, .trade h2, .about-copy h2 { font-size: 31px; }
+      .section-head p { margin-top: 12px; }
+      .product-grid { grid-template-columns: 1fr; gap: 13px; }
+      .product-card { display: grid; grid-template-columns: 38% 1fr; }
+      .product-card img { height: 100%; min-height: 190px; }
+      .product-body { padding: 15px 13px; }
+      .product-body h3 { font-size: 17px; }
+      .product-body p { min-height: 0; font-size: 11px; }
+      .grade { margin-top: 10px; padding-top: 9px; font-size: 10px; }
+      .product-link { margin-top: 9px; font-size: 11px; }
+      .product-foot { align-items: start; gap: 8px; font-size: 10px; }
+      .route-layout, .trade, .about-grid { grid-template-columns: 1fr; gap: 27px; }
+      .route-map, .map-content { min-height: 350px; }
+      .about-image { min-height: 245px; order: 2; }
+      .term-row { grid-template-columns: 112px 1fr; gap: 12px; }
+      .contact-grid { grid-template-columns: 1fr; gap: 25px; }
+      .contact h2 { font-size: 34px; }
+      .qr-block { grid-column: auto; display: flex; align-items: end; gap: 15px; }
+      .qr-caption { text-align: left; max-width: 150px; }
+      .footer-inner { align-items: start; flex-direction: column; gap: 10px; }
+      .mobile-contact { position: fixed; z-index: 9; right: 14px; bottom: 14px; display: inline-flex; align-items: center; justify-content: center; width: 54px; height: 54px; border-radius: 50%; background: var(--citrus); color: #1e3028; box-shadow: 0 5px 20px rgba(0,0,0,.22); font-size: 22px; font-weight: 800; text-decoration: none; }
+      footer { padding-bottom: 50px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition-duration: .01ms !important; } }
+  .video-controls{position:absolute;z-index:2;right:24px;bottom:18px;display:flex;align-items:center;gap:12px;color:white;font-size:11px}.video-controls button{background:#183c35;border:1px solid white;color:white;padding:8px 12px;cursor:pointer}
+/* Clear brand hierarchy: smaller emblem, more readable name, compact header. */
+.nav{min-height:150px;gap:16px;flex-wrap:wrap;align-content:center;justify-content:space-between}
+.brand{gap:12px;flex-shrink:0}
+.brand img{width:134px;height:auto;object-fit:contain}
+.brand-name{display:inline-block;font-size:34px;letter-spacing:1.1px;transform:translateY(3px)}
+.brand-sub{font-size:11px;letter-spacing:1.5px;margin-top:7px}
+.nav-links{gap:20px;order:3;width:100%;justify-content:center}.nav-links a{font-size:15px}
+section{scroll-margin-top:165px}
+.about-grid{grid-template-columns:.85fr 1.15fr;gap:62px}
+.about-image{min-height:430px}
+.about-copy h2{font-size:44px;line-height:1.2;font-weight:800;letter-spacing:-.6px}
+.about-copy p{font-size:18px;line-height:1.95;color:#43564b;max-width:650px}
+.about-copy .section-tag{font-size:12px;color:#718344;letter-spacing:2px}
+.about-name{font-size:15px;line-height:1.7;padding-top:23px}
+.route-copy>.section-tag[data-zh]{font-size:22px}
+.hero .eyebrow[data-zh]{font-size:16px;letter-spacing:.7px;text-transform:none;line-height:1.5}
+@media(max-width:1100px){.nav{gap:12px}.nav-links{gap:13px}.nav-links a{font-size:14px}.nav-actions .button{display:none}.brand-name{font-size:31px}}
+@media(max-width:700px){
+  .nav{min-height:0;padding-top:0;padding-bottom:0;gap:10px}
+  .brand{gap:9px;width:auto;flex-direction:row;align-items:center}
+  .brand img{width:101px;height:auto}
+  .brand-name{font-size:24px;transform:translateY(2px)}
+  .brand-sub{font-size:9px;letter-spacing:1.1px;margin-top:5px}
+  .nav-links{top:100%;position:absolute;order:3;width:100%;justify-content:flex-start}.nav-links a{font-size:15px}
+  .about-grid{grid-template-columns:1fr;gap:30px}
+  .about-copy h2{font-size:34px}
+  .about-copy p{font-size:17px;line-height:1.9}
+  .about-image{min-height:270px}
+  .about-name{font-size:13px}
+  section{scroll-margin-top:95px}
+  .route-copy>.section-tag[data-zh]{font-size:22px}
+}</style>
+</head>
+<body>
+  <div class="topline"><div class="wrap topline-inner"><span data-en>Nut sourcing and trade, shaped around your order</span><span data-zh>坚果采购与贸易服务，按订单需求对接</span><span data-en>International B2B enquiries · Guangzhou, China</span><span data-zh>国际业务咨询 · 中国广州</span></div></div>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="#home" aria-label="TH Nuts home"><img src="assets/th-nuts-logo.png" alt="TH Nuts"><span><span class="brand-name">TH NUTS</span><span class="brand-sub">GLOBAL NUT SOURCING</span></span></a>
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <div class="nav-product"><a href="#products" data-en>Products</a><a href="#products" data-zh>产品</a><div class="product-menu"><a href="macadamia.html" data-en>Macadamia</a><a href="macadamia.html" data-zh>夏威夷果</a><a href="cashew.html" data-en>Cashew</a><a href="cashew.html" data-zh>腰果</a><a href="other-nuts.html" data-en>Other nuts</a><a href="other-nuts.html" data-zh>其他坚果</a></div></div>
+        <a href="#supply" data-en>Supply routes</a><a href="#supply" data-zh>供应路线</a>
+        <a href="#trade" data-en>Trade terms</a><a href="#trade" data-zh>贸易条件</a>
+        <a href="company.html" data-en>Company</a><a href="company.html" data-zh>公司介绍</a>
+        <a href="#contact" data-en>Contact</a><a href="#contact" data-zh>联系</a>
+      </nav>
+      <div class="nav-actions"><button class="lang-switch" id="langSwitch" type="button" aria-label="Switch language">中文</button><a class="button" href="#contact"><span data-en>Talk to our team</span><span data-zh>联系业务团队</span><span aria-hidden="true">↗</span></a><button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation" aria-expanded="false">☰</button></div>
+    </div>
+  </header>
+  <main>
+    <section class="hero" id="home">
+      <video class="hero-video" autoplay muted loop playsinline poster="assets/warehouse-macadamia.jpg" aria-label="Macadamia orchard and processing video"><source src="assets/hero-macadamia.mp4" type="video/mp4"></video>
+      <div class="video-controls"><span data-en>Brand imagery · AI-generated</span><span data-zh>品牌示意影像 · AI 制作</span><button id="videoToggle" type="button">Pause / 暂停</button></div><div class="wrap"><div class="hero-content">
+        <p class="eyebrow" data-en>TH NUTS · GUANGZHOU TONGHUAN INTERNATIONAL SUPPLY CHAIN CO., LTD.</p><p class="eyebrow" data-zh>广州市通寰国际供应链有限公司 · TH NUTS</p>
+        <h1 data-en>Nuts, sourced<br>with purpose.</h1><h1 data-zh>让每一份坚果<br>找到合适的市场</h1>
+        <p class="hero-copy" data-en>Connecting origins, processors and food buyers through practical sourcing and cross-border trade in nuts.</p><p class="hero-copy" data-zh>以坚果采购与跨境贸易，连接原产地、加工端与食品采购商。</p>
+        <div class="hero-actions"><a class="button" href="#products"><span data-en>Explore our range</span><span data-zh>查看产品品类</span><span aria-hidden="true">↓</span></a><a class="button button-outline" href="#contact"><span data-en>Send an enquiry</span><span data-zh>发送采购咨询</span></a></div>
+        <div class="hero-note"><strong data-en>For food wholesalers, distributors, hotels and retail buyers.</strong><strong data-zh>面向食品批发商、贸易经销商、酒店及零售采购。</strong></div>
+      </div></div>
+    </section>
+    <div class="trustline"><div class="wrap trust-grid">
+      <div class="trust-item"><span class="trust-index">01</span><span><strong data-en>Origin-led sourcing</strong><strong data-zh>按产地组织采购</strong><span data-en>China · West Africa · Vietnam</span><span data-zh>中国 · 西非 · 越南</span></span></div>
+      <div class="trust-item"><span class="trust-index">02</span><span><strong data-en>Multiple nut categories</strong><strong data-zh>多品类坚果供应</strong><span data-en>Raw materials to kernels</span><span data-zh>原料、烘烤品与果仁</span></span></div>
+      <div class="trust-item"><span class="trust-index">03</span><span><strong data-en>Buyer-focused trade</strong><strong data-zh>服务渠道采购需求</strong><span data-en>Wholesale and distribution</span><span data-zh>批发、经销及食品渠道</span></span></div>
+      <div class="trust-item"><span class="trust-index">04</span><span><strong data-en>Direct business contact</strong><strong data-zh>直接联系业务团队</strong><span data-en>WhatsApp · Email · Zalo</span><span data-zh>WhatsApp · 邮箱 · Zalo</span></span></div>
+    </div></div>
+
+    <section class="section" id="products"><div class="wrap">
+      <div class="section-head"><div><p class="section-tag" data-en>Product range</p><p class="section-tag" data-zh>产品品类</p><h2 data-en>A considered range for professional buyers.</h2><h2 data-zh>为专业采购需求整理的坚果品类</h2></div><p data-en>Explore our current supply lines. Available grades, processing details and final specifications are confirmed against each order.</p><p data-zh>浏览现有供应品类。可供规格、加工细节及最终要求以具体订单确认为准。</p></div>
+      <div class="product-grid">
+        <article class="product-card"><img src="assets/macadamia-raw.jpg" alt="Raw in-shell macadamia nuts"><div class="product-body"><span class="product-kicker" data-en>Yunnan, China</span><span class="product-kicker" data-zh>中国云南</span><h3 data-en>Macadamia</h3><h3 data-zh>夏威夷果</h3><p data-en>Raw dried in-shell nuts, roasted large-opening nuts, and kernels.</p><p data-zh>壳果烘干原料、烘烤大开口果及果仁。</p><div class="grade"><strong data-en>Range:</strong><strong data-zh>品类：</strong> <span data-en>Raw · Original roast · Milk flavour · Kernels</span><span data-zh>原料 · 原味烘烤 · 奶香味 · 果仁</span><br><span data-en>Raw sizing: 20–22 · 22–25 · 25+ mm</span><span data-zh>原料尺寸：20–22 · 22–25 · 25+ mm</span></div><a class="product-link" href="macadamia.html"><span data-en>View product details</span><span data-zh>查看产品详情</span> ↗</a></div></article>
+        <article class="product-card"><img src="assets/cashew-white.jpg" alt="White cashew kernels"><div class="product-body"><span class="product-kicker" data-en>Vietnam processing · selected routes</span><span class="product-kicker" data-zh>越南加工 · 按贸易路线供应</span><h3 data-en>Cashew</h3><h3 data-zh>腰果</h3><p data-en>West African raw in-shell cashews for Vietnam; Vietnam-processed kernels for China.</p><p data-zh>西非带壳生腰果原料专供越南；越南加工腰果仁进口回中国销售。</p><div class="grade"><strong data-en>Kernel grades:</strong><strong data-zh>果仁规格：</strong> <span data-en>Purple skin A180 / A240 / A320 / A450 · White WW180 / WW320 / WW450</span><span data-zh>紫衣 A180 / A240 / A320 / A450 · 白腰果 WW180 / WW320 / WW450</span></div><a class="product-link" href="cashew.html"><span data-en>View product details</span><span data-zh>查看产品详情</span> ↗</a></div></article>
+        <article class="product-card"><img src="assets/pecans.jpg" alt="Pecan nuts"><div class="product-body"><span class="product-kicker" data-en>Vietnam processing · export markets</span><span class="product-kicker" data-zh>越南加工 · 出口海外市场</span><h3 data-en>More nut categories</h3><h3 data-zh>更多坚果品类</h3><p data-en>Pistachios, pecans, almonds and walnuts processed in Vietnam for third-country markets.</p><p data-zh>开心果、碧根果、巴旦木及核桃等在越南加工，销往第三方海外市场。</p><div class="grade"><strong data-en>Availability:</strong><strong data-zh>供应信息：</strong> <span data-en>Grades and formats vary by product and order.</span><span data-zh>各产品规格、形态及供应情况按订单确认。</span></div><a class="product-link" href="other-nuts.html"><span data-en>View product details</span><span data-zh>查看产品详情</span> ↗</a></div></article>
+      </div>
+      <div class="product-foot"><span data-en>Need a specific grade or pack format? Tell us the product, destination and estimated volume.</span><span data-zh>需要指定规格或包装形式？欢迎告知产品、目的地及预计采购量。</span><a href="#contact"><span data-en>Make an enquiry</span><span data-zh>提交采购咨询</span> ↗</a></div>
+    </div></section>
+
+    <section class="section supply" id="supply"><div class="wrap route-layout">
+      <div class="route-copy"><p class="section-tag" data-en>Supply chain routes</p><p class="section-tag" data-zh>产品供应链路线</p><h2 data-en>Clear routes from origin to buyer.</h2><h2 data-zh>从原产地到采购市场，贸易路线清晰</h2><p data-en>We coordinate sourcing and processing routes around product type and destination market, with clear distinctions between raw materials and finished products.</p><p data-zh>根据产品类型与目的市场衔接采购和加工环节，并区分原料与成品的贸易路线。</p>
+        <div class="route-list">
+          <div class="route-row"><span class="route-no">01</span><div><strong data-en>Yunnan → international buyers</strong><strong data-zh>云南 → 海外采购商</strong><span data-en>Macadamia raw nuts, roasted in-shell nuts and kernels.</span><span data-zh>夏威夷果原料、烘烤壳果及果仁。</span></div></div>
+          <div class="route-row"><span class="route-no">02</span><div><strong data-en>West Africa → Vietnam</strong><strong data-zh>西非 → 越南</strong><span data-en>Raw in-shell cashews supplied only to Vietnam.</span><span data-zh>带壳生腰果原料仅供应越南。</span></div></div>
+          <div class="route-row"><span class="route-no">03</span><div><strong data-en>Vietnam → third-country markets</strong><strong data-zh>越南 → 第三方海外市场</strong><span data-en>Vietnam-processed nuts, excluding cashew kernels sold into China.</span><span data-zh>越南加工的其他坚果销往海外；腰果仁回中国销售。</span></div></div>
+        </div>
+      </div>
+      <div class="route-map" role="img" aria-label="Sourcing and trade routes"><div class="map-content"><div class="map-label" data-en>TH Nuts · trade flow overview</div><div class="map-label" data-zh>TH Nuts · 贸易流向概览</div><div class="map-route"><div class="map-stop"><span class="map-dot"></span><div><strong data-en>Yunnan, China</strong><strong data-zh>中国云南</strong><span data-en>Macadamia sourcing</span><span data-zh>夏威夷果采购</span></div></div><div class="map-stop"><span class="map-dot"></span><div><strong data-en>West Africa → Vietnam</strong><strong data-zh>西非 → 越南</strong><span data-en>Raw in-shell cashew route</span><span data-zh>带壳生腰果原料路线</span></div></div><div class="map-stop"><span class="map-dot"></span><div><strong data-en>Vietnam → global markets</strong><strong data-zh>越南 → 海外市场</strong><span data-en>Processed nuts · cashew kernels to China</span><span data-zh>加工坚果出口 · 腰果仁销往中国</span></div></div></div><div class="route-caveat" data-en>Destinations and supply are product-specific and subject to order confirmation.</div><div class="route-caveat" data-zh>贸易目的地及供应情况因产品而异，以订单确认为准。</div></div></div>
+    </div></section>
+
+    <section class="section" id="trade"><div class="wrap trade">
+      <div><p class="section-tag" data-en>Trade & fulfilment</p><p class="section-tag" data-zh>包装与交付</p><h2 data-en>Practical terms.<br>Confirmed per order.</h2><h2 data-zh>务实的贸易条件<br>按订单确认</h2><p class="trade-intro" data-en>We align packing, timing and shipment details with the confirmed product, quantity and destination.</p><p class="trade-intro" data-zh>包装、交期及装运细节，根据确认的产品、数量和目的地安排。</p></div>
+      <div class="terms">
+        <div class="term-row"><strong data-en>Export packing</strong><strong data-zh>出口包装</strong><span data-en>20 kg or 30 kg cartons, with individually vacuum-sealed inner bags.</span><span data-zh>20 kg 或 30 kg 纸箱，内装独立抽真空密封袋。</span></div>
+        <div class="term-row"><strong data-en>Minimum order</strong><strong data-zh>最小起订量</strong><span data-en>500 cartons.</span><span data-zh>500 箱。</span></div>
+        <div class="term-row"><strong data-en>Typical lead time</strong><strong data-zh>常见交期</strong><span data-en>Within one month; confirm against the order.</span><span data-zh>通常一个月内，具体按订单确认。</span></div>
+        <div class="term-row"><strong data-en>Trade term</strong><strong data-zh>贸易术语</strong><span data-en>FOB; port and shipment details confirmed per order.</span><span data-zh>FOB；装运港及装船细节按订单确认。</span></div>
+        <div class="term-row"><strong data-en>Payment</strong><strong data-zh>付款方式</strong><span data-en>Full payment collected before loading.</span><span data-zh>装船前收齐全款。</span></div>
+      </div>
+    </div></section>
+
+    <section class="section about-band" id="about"><div class="wrap about-grid"><div class="about-image" role="img" aria-label="TH Nuts office"></div><div class="about-copy"><p class="section-tag" data-en>About TH Nuts</p><p class="section-tag" data-zh>关于 TH Nuts</p><h2 data-en>A trading partner built around sourcing and supply.</h2><h2 data-zh>专注坚果采购与供应协同的贸易伙伴</h2><p data-en>Guangzhou Tonghuan International Supply Chain Co., Ltd. works across nut sourcing, processing coordination and cross-border trade. We help professional buyers discuss product selection, specifications and delivery details with a direct business contact.</p><p data-zh>广州市通寰国际供应链有限公司从事坚果采购、加工协同与跨境贸易，协助专业采购商直接沟通产品选择、规格与交付安排。</p><a class="product-link" href="company.html"><span data-en>Meet the company</span><span data-zh>了解公司介绍</span> ↗</a><div class="about-name">广州市通寰国际供应链有限公司 · Guangzhou Tonghuan International Supply Chain Co., Ltd.</div></div></div></section>
+
+    <section class="section contact" id="contact"><div class="wrap contact-grid"><div><p class="section-tag" data-en>Contact</p><p class="section-tag" data-zh>联系我们</p><h2 data-en>Let's talk nuts<br>and your market.</h2><h2 data-zh>聊聊产品<br>也聊聊你的市场</h2><p class="contact-intro" data-en>Share the product, destination, target specification and estimated volume. Our business contact details are public below.</p><p class="contact-intro" data-zh>欢迎告知产品、目的地、目标规格及预计采购量。业务联系方式公开如下。</p></div><div class="contact-list">
+        <div class="contact-row"><span>WhatsApp</span><a href="https://wa.me/8618565444337" target="_blank" rel="noreferrer">+86 185 6544 4337 ↗</a></div>
+        <div class="contact-row"><span>Email</span><a href="mailto:enochpeng97@gmail.com">enochpeng97@gmail.com ↗</a></div>
+        <div class="contact-row"><span>Facebook</span><span>Peng Enoch</span></div>
+        <div class="contact-row"><span>Instagram</span><a href="https://instagram.com/enochpeng97" target="_blank" rel="noreferrer">@enochpeng97 ↗</a></div>
+        <div class="contact-row"><span>Zalo</span><span data-en>Scan the QR code</span><span data-zh>扫描二维码联系</span></div>
+      </div><div class="qr-block"><div class="qr"><img src="assets/zalo-qr.png" alt="Zalo contact QR code"></div><div class="qr-caption" data-en>Scan to connect on Zalo</div><div class="qr-caption" data-zh>扫码添加 Zalo 联系</div></div></div></section>
+  </main>
+  <footer><div class="wrap footer-inner"><span>© <span id="year"></span> Guangzhou Tonghuan International Supply Chain Co., Ltd. · TH Nuts</span><div class="footer-links"><a href="#products" data-en>Products</a><a href="#products" data-zh>产品</a><a href="#contact" data-en>Contact</a><a href="#contact" data-zh>联系</a></div></div></footer>
+  <a class="mobile-contact" href="https://wa.me/8618565444337" target="_blank" rel="noreferrer" aria-label="Contact TH Nuts on WhatsApp">↗</a>
+  <script>
+    const video=document.querySelector('.hero-video');const videoToggle=document.getElementById('videoToggle');videoToggle.addEventListener('click',()=>{if(video.paused){video.play().catch(()=>{});}else{video.pause();}});function syncVideo(){videoToggle.textContent=video.paused?'Play / 播放':'Pause / 暂停';}video.addEventListener('play',syncVideo);video.addEventListener('pause',syncVideo);if(matchMedia('(prefers-reduced-motion: reduce)').matches){video.autoplay=false;video.pause();}syncVideo();const body = document.body;
+    const langSwitch = document.getElementById('langSwitch');
+    const navLinks = document.getElementById('navLinks');
+    const menuToggle = document.getElementById('menuToggle');
+    const savedLanguage = localStorage.getItem('thnuts-language');
+    if (savedLanguage === 'zh') body.classList.add('zh');
+    function updateLanguageButton() { document.documentElement.lang=body.classList.contains('zh')?'zh-CN':'en'; langSwitch.textContent = body.classList.contains('zh') ? 'EN' : '中文'; }
+    updateLanguageButton();
+    langSwitch.addEventListener('click', () => {
+      body.classList.toggle('zh');
+      localStorage.setItem('thnuts-language', body.classList.contains('zh') ? 'zh' : 'en');
+      updateLanguageButton();
+    });
+    menuToggle.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(open));
+      menuToggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+      menuToggle.textContent = open ? '×' : '☰';
+    });
+    navLinks.addEventListener('click', (event) => {
+      if (event.target.closest('a')) { navLinks.classList.remove('open'); menuToggle.setAttribute('aria-expanded', 'false'); menuToggle.textContent = '☰'; }
+    });
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
